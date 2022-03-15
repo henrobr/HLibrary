@@ -1,0 +1,10 @@
+D:\ArquivosGit\henrobr\Sistemas\HLibrary\HLibrary\bin\Debug\netcoreapp3.1\HLibrary.deps.json
+D:\ArquivosGit\henrobr\Sistemas\HLibrary\HLibrary\bin\Debug\netcoreapp3.1\HLibrary.dll
+D:\ArquivosGit\henrobr\Sistemas\HLibrary\HLibrary\bin\Debug\netcoreapp3.1\HLibrary.pdb
+D:\ArquivosGit\henrobr\Sistemas\HLibrary\HLibrary\obj\Debug\netcoreapp3.1\HLibrary.csproj.AssemblyReference.cache
+D:\ArquivosGit\henrobr\Sistemas\HLibrary\HLibrary\obj\Debug\netcoreapp3.1\HLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\ArquivosGit\henrobr\Sistemas\HLibrary\HLibrary\obj\Debug\netcoreapp3.1\HLibrary.AssemblyInfoInputs.cache
+D:\ArquivosGit\henrobr\Sistemas\HLibrary\HLibrary\obj\Debug\netcoreapp3.1\HLibrary.AssemblyInfo.cs
+D:\ArquivosGit\henrobr\Sistemas\HLibrary\HLibrary\obj\Debug\netcoreapp3.1\HLibrary.csproj.CoreCompileInputs.cache
+D:\ArquivosGit\henrobr\Sistemas\HLibrary\HLibrary\obj\Debug\netcoreapp3.1\HLibrary.dll
+D:\ArquivosGit\henrobr\Sistemas\HLibrary\HLibrary\obj\Debug\netcoreapp3.1\HLibrary.pdb
