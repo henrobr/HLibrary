@@ -50,9 +50,6 @@ namespace HLibrary
 
                 //outras opções
                 //mail.Attachments.Add(new Attachment(arquivo));
-                //
-
-                //NEVER_EAT_POISON_Disable_CertificateValidation();
 
                 using (SmtpClient smtp = new SmtpClient(emailSettings.PrimaryDomain, emailSettings.PrimaryPort))
                 {
