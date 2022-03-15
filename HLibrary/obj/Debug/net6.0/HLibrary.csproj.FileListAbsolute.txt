@@ -1,0 +1,5 @@
+D:\ArquivosGit\henrobr\Sistemas\HLibrary\HLibrary\obj\Debug\net6.0\HLibrary.csproj.AssemblyReference.cache
+D:\ArquivosGit\henrobr\Sistemas\HLibrary\HLibrary\obj\Debug\net6.0\HLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\ArquivosGit\henrobr\Sistemas\HLibrary\HLibrary\obj\Debug\net6.0\HLibrary.AssemblyInfoInputs.cache
+D:\ArquivosGit\henrobr\Sistemas\HLibrary\HLibrary\obj\Debug\net6.0\HLibrary.AssemblyInfo.cs
+D:\ArquivosGit\henrobr\Sistemas\HLibrary\HLibrary\obj\Debug\net6.0\HLibrary.csproj.CoreCompileInputs.cache
