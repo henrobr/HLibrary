@@ -10,10 +10,10 @@ namespace HLibrary
     public class RequestApi
     {
         public static string UrlApi { get; set; }
-        public static T Request<T>(string url = null, Method method = Method.GET, DataFormat dataFormat = DataFormat.None, object data = null, string auth = null)
+        public static T Request<T>(string url = null, Method method = Method.Get, DataFormat dataFormat = DataFormat.None, object data = null, string auth = null)
         {
             var client = new RestClient(UrlApi);
-            var request = new RestRequest(url, method, dataFormat);
+            var request = new RestRequest(url, method: method); //(url, method, dataFormat);
 
             if (auth != null)
                 request.AddHeader("Authorization", auth);
@@ -24,18 +24,11 @@ namespace HLibrary
                     data = JsonConvert.SerializeObject(data);
                     request.AddJsonBody(data);
                 }
-                else
-                {
-                    foreach (var prop in data.GetType().GetProperties())
-                    {
-                        request.AddParameter(prop.Name, prop.GetValue(data, null));
-                    }
-                }
 
             }
             request.OnBeforeDeserialization = resp => { resp.ContentType = "application/json"; };
 
-            IRestResponse<T> response = client.Execute<T>(request);
+            RestResponse<T> response = client.Execute<T>(request);
 
             if (!response.IsSuccessful)
             {

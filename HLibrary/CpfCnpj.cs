@@ -145,6 +145,7 @@ namespace HLibrary
                 txt = txt.Replace(".", "");
                 txt = txt.Replace("-", "");
                 txt = txt.Replace("/", "");
+                txt = txt.Replace(" ", "");
             }         
 
             return txt;

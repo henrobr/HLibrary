@@ -18,21 +18,21 @@ namespace HLibrary
         }
         public Task SendEmailAsync(string email, string subject, string message)
         {
-            try
-            {
+            //try
+            //{
                 Execute(email, subject, message).Wait();
                 return Task.FromResult(0);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            //}
+            //catch (Exception)
+            //{
+            //    throw;
+            //}
         }
 
         public async Task Execute(string email, string subject, string message)
         {
-            try
-            {
+            //try
+            //{
                 string toEmail = string.IsNullOrEmpty(email) ? emailSettings.ToEmail : email;
 
                 MailMessage mail = new MailMessage()
@@ -44,8 +44,8 @@ namespace HLibrary
                 //mail.CC.Add(new MailAddress(emailSettings.CcEmail));
 
                 mail.Subject = subject;
-                mail.Body = message;
                 mail.IsBodyHtml = true;
+                mail.Body = message;
                 mail.Priority = MailPriority.High;
 
                 //outras opções
@@ -60,27 +60,27 @@ namespace HLibrary
                     await smtp.SendMailAsync(mail);
                     mail.Dispose();
                 }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw ex;
+            //}
         }
-        static void NEVER_EAT_POISON_Disable_CertificateValidation()
-        {
-            // Disabling certificate validation can expose you to a man-in-the-middle attack
-            // which may allow your encrypted message to be read by an attacker
-            // https://stackoverflow.com/a/14907718/740639
-            ServicePointManager.ServerCertificateValidationCallback =
-                delegate (
-                    object s,
-                    X509Certificate certificate,
-                    X509Chain chain,
-                    SslPolicyErrors sslPolicyErrors
-                ) {
-                    return true;
-                };
-        }
+        //static void NEVER_EAT_POISON_Disable_CertificateValidation()
+        //{
+        //    // Disabling certificate validation can expose you to a man-in-the-middle attack
+        //    // which may allow your encrypted message to be read by an attacker
+        //    // https://stackoverflow.com/a/14907718/740639
+        //    ServicePointManager.ServerCertificateValidationCallback =
+        //        delegate (
+        //            object s,
+        //            X509Certificate certificate,
+        //            X509Chain chain,
+        //            SslPolicyErrors sslPolicyErrors
+        //        ) {
+        //            return true;
+        //        };
+        //}
     }
 
     public class EmailSettings

@@ -1,0 +1,12 @@
+D:\ArquivosGit\henrobr\HLibrary\HLibrary\bin\Release\net6.0\HLibrary.deps.json
+D:\ArquivosGit\henrobr\HLibrary\HLibrary\bin\Release\net6.0\HLibrary.dll
+D:\ArquivosGit\henrobr\HLibrary\HLibrary\bin\Release\net6.0\HLibrary.pdb
+D:\ArquivosGit\henrobr\HLibrary\HLibrary\obj\Release\net6.0\HLibrary.csproj.AssemblyReference.cache
+D:\ArquivosGit\henrobr\HLibrary\HLibrary\obj\Release\net6.0\HLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\ArquivosGit\henrobr\HLibrary\HLibrary\obj\Release\net6.0\HLibrary.AssemblyInfoInputs.cache
+D:\ArquivosGit\henrobr\HLibrary\HLibrary\obj\Release\net6.0\HLibrary.AssemblyInfo.cs
+D:\ArquivosGit\henrobr\HLibrary\HLibrary\obj\Release\net6.0\HLibrary.csproj.CoreCompileInputs.cache
+D:\ArquivosGit\henrobr\HLibrary\HLibrary\obj\Release\net6.0\HLibrary.dll
+D:\ArquivosGit\henrobr\HLibrary\HLibrary\obj\Release\net6.0\refint\HLibrary.dll
+D:\ArquivosGit\henrobr\HLibrary\HLibrary\obj\Release\net6.0\HLibrary.pdb
+D:\ArquivosGit\henrobr\HLibrary\HLibrary\obj\Release\net6.0\ref\HLibrary.dll

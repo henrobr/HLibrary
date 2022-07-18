@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -47,12 +48,16 @@ namespace HLibrary
         public static string CortaTexto(string texto, int tam) //Corta o tamanha do texto
         {
             string dados = "";
-            if (texto.Length > tam)
+            if (!string.IsNullOrEmpty(texto))
             {
-                dados = texto.Substring(0, tam);
+                if (texto.Length > tam)
+                {
+                    dados = texto.Substring(0, tam);
+                }
+                else
+                    dados = texto;
             }
-            else
-                dados = texto;
+            
             return dados;
         }
         public static bool ValidarEmail(string email)
@@ -82,7 +87,14 @@ namespace HLibrary
 
             return convertido;
         }
-
+        public static string GerarCodigo(int nb = 1)
+        {
+            string numeroAleatorio = "";
+            var random = new Random();
+            var possibilidades = Enumerable.Range(0, nb).ToList();
+            var resultado = possibilidades.OrderBy(number => random.Next()).Take(10).ToArray();
+            return numeroAleatorio = String.Join("", resultado).PadLeft(nb, '0');
+        }
 
         public static string RemoverCaracterEspecial(string str)
         {
@@ -143,6 +155,137 @@ namespace HLibrary
 
             return str;
 
+        }
+        public static string GerarNumCartao(string nmb)
+        {
+            int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int[] multiplicador3 = new int[11] { 6, 5, 4, 3, 2, 7, 8, 9, 10, 11, 12 };
+            string tempNmb;
+            string digito;
+            int soma;
+            int resto;
+
+            nmb = nmb.PadLeft(9, '0');
+
+            tempNmb = nmb;
+
+            soma = 0;
+            for (int i = 0; i < 9; i++)
+                soma += int.Parse(nmb[i].ToString()) * multiplicador1[i];
+
+            resto = soma % 11;
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+
+            digito = resto.ToString();
+
+            nmb = tempNmb + digito;
+
+            soma = 0;
+            for (int i = 0; i < 10; i++)
+                soma += int.Parse(nmb[i].ToString()) * multiplicador2[i];
+
+            resto = soma % 11;
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+
+            digito = digito + resto.ToString();
+
+            nmb = tempNmb + digito;
+
+            soma = 0;
+            for (int i = 0; i < 11; i++)
+                soma += int.Parse(nmb[i].ToString()) * multiplicador3[i];
+
+            resto = soma % 11;
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+
+            digito = digito + resto.ToString();
+
+            nmb = tempNmb + digito;
+
+            return nmb;
+        }
+        public static bool ValidaNumCartao(string nmb)
+        {
+            int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int[] multiplicador3 = new int[11] { 6, 5, 4, 3, 2, 7, 8, 9, 10, 11, 12 };
+            string tempNmb;
+            string digito;
+            int soma;
+            int resto;
+
+            
+
+            if (string.IsNullOrEmpty(nmb))
+                return false;
+
+            nmb = nmb.Trim();
+            nmb = nmb.Replace(".", "").Replace("-", "").Replace(" ", "");
+
+
+            if (nmb.Length != 12)
+                return false;
+
+            tempNmb = nmb.Substring(0, 9);
+
+            soma = 0;
+            for (int i = 0; i < 9; i++)
+                soma += int.Parse(tempNmb[i].ToString()) * multiplicador1[i];
+
+            resto = soma % 11;
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+
+            digito = resto.ToString();
+
+            tempNmb = tempNmb + digito;
+
+            soma = 0;
+            for (int i = 0; i < 10; i++)
+                soma += int.Parse(tempNmb[i].ToString()) * multiplicador2[i];
+
+            resto = soma % 11;
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+
+            digito = digito + resto.ToString();
+
+            tempNmb = tempNmb + resto.ToString();
+
+            soma = 0;
+            for (int i = 0; i < 11; i++)
+                soma += int.Parse(tempNmb[i].ToString()) * multiplicador3[i];
+
+            resto = soma % 11;
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+
+            digito = digito + resto.ToString();
+
+            return nmb.EndsWith(digito);
+        }
+        public static string FormataNumCartao(string nmb)
+        {
+            nmb = nmb.Trim();
+            nmb = nmb.Replace(".", "").Replace("-", "").Replace(" ", "");
+
+            return nmb.Substring(0, 4) + " " + nmb.Substring(4, 4) + " " + nmb.Substring(8, 4);
         }
     }
 }
